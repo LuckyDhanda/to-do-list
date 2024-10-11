@@ -1,0 +1,191 @@
+main{
+    background-color: white;
+    margin: auto;
+    padding-bottom: 20px;
+    width: 60vw;
+    letter-spacing: 0.3; 
+    font-family:sans-serif;
+}
+
+body{
+    background-color: grey;
+    margin: 0;
+}
+
+h1{
+    font-family:serif;
+    text-align: center;
+    padding: 10px;
+}
+
+hr{
+    border-top: solid 0.5px grey;
+}
+
+.padding{
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+
+
+input{
+    width: 100%;
+    border: none;
+    margin-top: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.parent{
+    display: flex;
+    width: 100%;
+}
+.child {
+    width: 50%;
+    text-align: left;
+    padding: 10px; 
+    box-sizing: border-box; /* To include padding in the width calculation */
+}
+
+
+select {
+    border: 0;
+    width: 90%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 26vw;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.add, .delete{
+    width: 12vw;
+    text-align: center;
+    padding: 13px;
+    background-color: rgb(25, 18, 18);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete{
+    background-color: rgb(150, 7, 7);
+    position: relative;
+    top: -80px; 
+    left: 60%; 
+    transform: translateX(-50%); 
+}
+
+li a{
+    text-decoration: none; 
+    color: rgb(150, 7, 7); 
+ }
+
+.fa{
+     margin-right: 5px;
+}
+
+
+/* for list items*/
+ul {
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    position: relative;
+    padding-left: 40px; /* Adjust to give space for the checkbox */
+}
+
+.check-box {
+    position: absolute;
+    left: 0; 
+    top: 30%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.task-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.task-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.description {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.dateC {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.task-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.category {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+    width: 60px;
+    text-align: center;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+  }
+
+
+.delete-btn {
+    color: rgb(121, 119, 119);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.2em;
+}
+
+.delete-btn:hover {
+    color: darkred;
+}
+
+.work{
+ background-color: rgb(134, 182, 182);
+}
+
+.family{
+    background-color: rgb(233, 205, 124);
+}
+
+.personal{
+    background-color: rgb(85, 151, 105);
+}
+
+.others{
+    background-color: rgb(156, 118, 184);
+}

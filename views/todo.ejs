@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="/CSS/todo.css">
+    </head>
+    <body>
+        <main>
+            <h1>TODO App</h1>
+            <hr>
+
+            <div>
+                <form action="/add-task" method="post">
+                    <div class="padding">
+                        <label for="description">DESCRIPTION</label><br>
+                        <input type="text" name="description" placeholder="What do you need to do?" ><br>
+                    </div> 
+                    <hr>
+
+                    <div class="parent ">
+                        <div class=" padding child">
+                            <label for="category">CATEGORY</label>
+                            <br>
+                            <select name="category" id="category" >
+                                <option value="">Choose a category</option>
+                                <option value="Work">Work</option>
+                                <option value="Family">Family</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Others">Others</option>
+                              </select>
+                        </div>
+                        <div class="date padding child">
+                            <label for="date">DUE DATE</label>
+                            <input type="date" name="date" >
+                        </div>
+                    </div>
+                    <hr>
+
+                    
+                    <div class="buttons">
+                        <div>
+                            <button type="submit" class="add"><i class="fa fa-plus" aria-hidden="true"></i> ADD TASK</button>
+                        </div>
+  
+                    </div>
+                    
+                </form>          
+
+                <div>
+                    <button class="delete" id="delete-button"><i class="fa fa-trash" aria-hidden="true"></i> DELETE TASKS</button>
+                </div> 
+                    <div>
+                        <ul>
+                            <% for (let i of todoList) { %>
+                                <hr>
+                                <li class="task">
+                                    <input type="checkbox" name="check-delete" class="check-box" id="<%= i._id %>" onclick="toggleStrikeThrough('<%= i._id %>')">
+
+                                    <div class="task-content">
+                                        <div class="task-left">
+                                            <div class="description" id="desc-<%= i._id %>"><%= i.description %></div>
+                                            <div class="dateC">
+                                                <span><i class="fas fa-calendar"> </i></span>
+                                                <span ><%= new Date(i.date).toLocaleDateString() %></span>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="task-right">
+                                            <div class="category"><%= i.category %></div>
+                                        </div>
+                                    </div>
+                                    <a href="/delete/?id=<%= i._id%>" class="delete-btn"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                    
+                
+            </div>   
+        </main>
+        <script src="/JS/todo.js"></script>
+    </body>
+</html>
